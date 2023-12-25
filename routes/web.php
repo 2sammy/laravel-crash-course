@@ -19,7 +19,8 @@ use function Laravel\Prompts\select;
 */
 
 Route::get('/', function () {
-    $users = User::where('id', 1) ->first();
+    return view('welcome');
+});
 
     //return view('welcome');
     //fetching  all users
@@ -38,16 +39,16 @@ Route::get('/', function () {
         'name' => 'manoah',
         'email' => 'manoahs02@gmail.com',
         'password' => 'manoah'
-    ]);*/
+    ]);
 $user= User::create([
     'name' => 'osengo',
-    'email' => 'osengo123@gmail.com',
-    'password'=> 'osengo',
+    'email' => 'osengo129@gmail.com',
+    'password'=> bcrypt('osengo'),
 ]);
-    /*$user =DB::table('users') ->insert([
+    $user =DB::table('users') ->insert([
         'name' => 'sam',
-        'email' => 'sammuel012@gmail.com',
-        'password' => 'sammy'
+        'email' => 'sammuel010@gmail.com',
+        'password' => bcrypt('password')
     ]);*/
 
     //update user
@@ -65,8 +66,8 @@ $user= User::create([
 //    $user = DB::delete("delete from users where id=2");
 
 /*$user =DB::table('users')-> where('id',10) ->delete();*/
-    dd($user);
-});
+   // dd($users);
+//});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
